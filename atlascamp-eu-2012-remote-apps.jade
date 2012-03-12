@@ -1,0 +1,101 @@
+!!! 5
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title
+      | Remote Apps | AtlasCamp Europe 2012
+    meta(name='description', content='A developer preview of Atlassian\'s Remote Apps framework')
+    meta(name='author', content='Rich Manalang')
+    link(href='http://fonts.googleapis.com/css?family=Lato:400,900,700italic,900italic', rel='stylesheet', type='text/css')
+    link(href='css/style.css', rel='stylesheet')
+
+    - var col1 = {x:2700,y:0};
+    - function col1Y(i){ return i===0 ? 0 : col1.y += 500;}
+
+  body
+    #impress
+
+      .title.step.centered(data-x='0', data-y='0', data-scale='4')
+        h1 Atlassian Remote Apps
+
+      .title.step.huge.centered(data-x='0', data-y='400', data-scale='4')
+        h4 a preview
+
+      .title.step.profile(data-x='0', data-y="700", data-scale='4')
+        img(src="images/manalang.jpg")
+        .col.span120
+          h4 Rich Manalang &rarr; @rmanalan
+          h5.black
+            | Developer Advocate, Atlassian
+
+      .step.huge.centered(data-x='2000', data-y='0', data-rotate="90")
+        p got plugins?
+        .notes.
+          How many of you have written plugins for Atlassian?
+          Good... lots of you. So, let's take a brief look at 
+          the existing plugin framework and process for building
+          and deploying plugins.
+
+      .step.huge.centered(data-x='#{col1.x}', data-y='#{col1Y(0)}')
+        img(src='images/p0.png', width="800px")
+        .notes.
+
+      .step.huge.centered(data-x='#{col1.x}', data-y='#{col1Y()}')
+        img(src='images/p1.png', width="800px")
+        .notes.
+          Most of us start by firing up the Atlassian SDK and using 
+          the useful atlas-* command line commands. Here I'm creating a
+          JIRA plugin. The SDK will create a bootstrapped version of a
+          plugin for me.
+
+
+      .step.huge.centered(data-x='#{col1.x}', data-y='#{col1Y()}')
+        img(src='images/p2.png', width="800px")
+        .notes.
+          Next, you crack open your IDE and start coding. 
+
+      .step.huge.centered(data-x='#{col1.x}', data-y='#{col1Y()}')
+        img(src='images/p4.png', width="800px")
+        .notes.
+          Atlassian supports a varying number of plugin points (or modules)
+          and you'll likely be referring to the documentation on 
+          developer.atlassian.com a lot.
+
+      .step.huge.centered(data-x='#{col1.x}', data-y='#{col1Y()}')
+        img(src='images/p3.png', width="800px")
+        .notes.
+          You can use the 
+          SDK again to quickly generate bootstrap code for the modules
+          you plan to use. Code and repeat again until your plugin
+          is done.
+
+      .step.centered(data-x='#{col1.x}', data-y='#{col1Y()}',data-rotate="360")
+        img.photo(src='images/smoke.jpeg', width="100%")
+
+      .step.huge.centered(data-x='#{col1.x}', data-y='#{col1Y()}')
+        img(src='images/p5.png', width="800px")
+        .notes.
+          Once you're ready to ship, you'll likely want to register your
+          plugin on plugins.atlassian.com. This brings you a few benefits...
+
+      .step.huge.centered(data-x='#{col1.x}', data-y='#{col1Y()}')
+        p
+          | Marketing 
+          br
+          | and
+          br
+          | Selling
+        .notes.
+          When you publish your plugin to the Atlassian Marketplace, you
+          instantly make your plugin available to all Atlassian customers
+          through the in-app Marketplace or UPM. You can give your plugin
+          away for free or sell it.
+
+            
+      #overview.step(data-x='3000', data-y='1500', data-scale='10')
+
+    .hint
+      p Use a spacebar or arrow keys to navigate
+    .camp-logo
+    .camp-bg-right
+    script(src='js/impress.js')
